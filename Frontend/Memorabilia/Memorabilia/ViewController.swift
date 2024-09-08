@@ -41,7 +41,8 @@ class ViewController: UIViewController {
     }
 
     @objc func loginUser() {
-        login(provider: .GOOGLE)
+        performSegue(withIdentifier: "dashboard", sender: nil)
+//        login(provider: .GOOGLE)
     }
     
     func login(provider: Web3AuthProvider) {
@@ -66,7 +67,7 @@ class ViewController: UIViewController {
                     
                     Web3AuthManager.sharedAuthManager.user = result
                     // Go to dashboard
-                    
+                    performSegue(withIdentifier: "dashboard", sender: nil)
                     
                     
                 } else {

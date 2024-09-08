@@ -16,6 +16,9 @@
 		5C4B557C2C8D8A1A002D72B8 /* Web3Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 5C4B557B2C8D8A1A002D72B8 /* Web3Auth */; };
 		5C4B557E2C8D8D83002D72B8 /* Web3Auth.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C4B557D2C8D8D83002D72B8 /* Web3Auth.plist */; };
 		5C4B55802C8D8DFF002D72B8 /* Web3AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B557F2C8D8DFF002D72B8 /* Web3AuthManager.swift */; };
+		5C4B55822C8DB14A002D72B8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B55812C8DB14A002D72B8 /* FeedViewController.swift */; };
+		5C4B55842C8DB17F002D72B8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B55832C8DB17F002D72B8 /* CollectionViewController.swift */; };
+		5C4B55862C8DB1C2002D72B8 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B55852C8DB1C2002D72B8 /* CustomTabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		5C4B55742C85CEDD002D72B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4B557D2C8D8D83002D72B8 /* Web3Auth.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Web3Auth.plist; sourceTree = "<group>"; };
 		5C4B557F2C8D8DFF002D72B8 /* Web3AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Web3AuthManager.swift; sourceTree = "<group>"; };
+		5C4B55812C8DB14A002D72B8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		5C4B55832C8DB17F002D72B8 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		5C4B55852C8DB1C2002D72B8 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,9 @@
 				5C4B55662C85CEDB002D72B8 /* AppDelegate.swift */,
 				5C4B55682C85CEDB002D72B8 /* SceneDelegate.swift */,
 				5C4B556A2C85CEDB002D72B8 /* ViewController.swift */,
+				5C4B55812C8DB14A002D72B8 /* FeedViewController.swift */,
+				5C4B55832C8DB17F002D72B8 /* CollectionViewController.swift */,
+				5C4B55852C8DB1C2002D72B8 /* CustomTabbarController.swift */,
 				5C4B557F2C8D8DFF002D72B8 /* Web3AuthManager.swift */,
 				5C4B556C2C85CEDB002D72B8 /* Main.storyboard */,
 				5C4B556F2C85CEDD002D72B8 /* Assets.xcassets */,
@@ -153,8 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4B55842C8DB17F002D72B8 /* CollectionViewController.swift in Sources */,
 				5C4B556B2C85CEDB002D72B8 /* ViewController.swift in Sources */,
 				5C4B55672C85CEDB002D72B8 /* AppDelegate.swift in Sources */,
+				5C4B55822C8DB14A002D72B8 /* FeedViewController.swift in Sources */,
+				5C4B55862C8DB1C2002D72B8 /* CustomTabbarController.swift in Sources */,
 				5C4B55802C8D8DFF002D72B8 /* Web3AuthManager.swift in Sources */,
 				5C4B55692C85CEDB002D72B8 /* SceneDelegate.swift in Sources */,
 			);
