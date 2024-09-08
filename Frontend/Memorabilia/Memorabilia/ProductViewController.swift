@@ -52,10 +52,10 @@ class ProductViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.mintButton.setTitle("Mint complete!", for: .normal)
             
-            
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self?.dismiss(animated: true, completion: nil)
+                self?.dismiss(animated: true, completion: {
+                    NotificationCenter.default.post(name: NSNotification.Name("PopoverDismissed"), object: nil)
+                })
             }
         }
         

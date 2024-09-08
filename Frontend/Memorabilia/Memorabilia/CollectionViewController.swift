@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CollectionViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class CollectionViewController: UIViewController {
     
     @IBOutlet weak var mintedViewController: UIView!
     
@@ -16,6 +16,7 @@ class CollectionViewController: UIViewController, UIPopoverPresentationControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         mintedViewController.alpha = 0.0
+        NotificationCenter.default.addObserver(self, selector: #selector(handlePopoverDismissal), name: NSNotification.Name("PopoverDismissed"), object: nil)
     }
     
     func mintMemento() {
@@ -30,14 +31,18 @@ class CollectionViewController: UIViewController, UIPopoverPresentationControlle
         productVC.product = .tshirt
         productVC.isMintable = true
         productVC.modalPresentationStyle = .popover
-        
-        if let popoverPresentationController = productVC.popoverPresentationController {
-            popoverPresentationController.delegate = self
-        }
         present(productVC, animated: true, completion: nil)
     }
     
-    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
-        print("show minted item")
+    @objc func handlePopoverDismissal() {
+        print("Popover was dismissed! Performing action via notification.")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self] in
+            self?.mintedViewController.alpha = 1.0
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name("PopoverDismissed"), object: nil)
     }
 }
