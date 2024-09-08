@@ -10,6 +10,7 @@ import Web3Auth
 
 class Web3AuthManager {
     
+    var user: Web3AuthState?
     static let sharedAuthManager = Web3AuthManager()
     
     

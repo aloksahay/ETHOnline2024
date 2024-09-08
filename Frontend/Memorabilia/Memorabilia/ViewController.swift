@@ -9,8 +9,6 @@ import UIKit
 import Web3Auth
 
 class ViewController: UIViewController {
-
-    var user: Web3AuthState?
     
     @IBOutlet var bgImageView: UIImageView!
     var signinButton: UIButton?
@@ -19,11 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
+        
     func setupViews() {
         signinButton = UIButton(type: .system)
         signinButton?.setTitle("Sign in with Web3Auth", for: .normal)
@@ -34,6 +28,8 @@ class ViewController: UIViewController {
         signinButton?.layer.cornerRadius = 20
         signinButton?.clipsToBounds = true
         signinButton?.translatesAutoresizingMaskIntoConstraints = false
+        signinButton?.addTarget(self, action: #selector(loginUser), for: .touchUpInside)
+        
         self.view.addSubview(signinButton!)
         
         NSLayoutConstraint.activate([
@@ -42,15 +38,9 @@ class ViewController: UIViewController {
             signinButton!.widthAnchor.constraint(equalToConstant: 200),
             signinButton!.heightAnchor.constraint(equalToConstant: 40)
         ])
-        
-        
-        
     }
 
-    @IBAction func signInPressed(_ sender: Any) {
-        loginUser()
-    }
-    func loginUser() {
+    @objc func loginUser() {
         login(provider: .GOOGLE)
     }
     
@@ -74,8 +64,11 @@ class ViewController: UIViewController {
                                 Type of login: \(String(describing: result.userInfo?.typeOfLogin))
                        """)
                     
-                    self.user = result
-                    // do something here
+                    Web3AuthManager.sharedAuthManager.user = result
+                    // Go to dashboard
+                    
+                    
+                    
                 } else {
                     print("Error: \(result.error ?? "404")")
                 }
@@ -90,7 +83,7 @@ class ViewController: UIViewController {
         Task {
             do {
                 let result = try await Web3Auth()
-                self.user = result.state
+                Web3AuthManager.sharedAuthManager.user = result.state
             }
             catch {
                print("Error")
