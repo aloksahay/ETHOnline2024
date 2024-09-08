@@ -8,7 +8,7 @@
 import UIKit
 import Web3Auth
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet var bgImageView: UIImageView!
     var signinButton: UIButton?
