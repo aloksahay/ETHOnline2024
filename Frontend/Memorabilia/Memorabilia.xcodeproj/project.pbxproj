@@ -22,7 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C4B55632C85CEDB002D72B8 /* Memorabilia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorabilia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C4B55632C85CEDB002D72B8 /* Memento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C4B55662C85CEDB002D72B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C4B55682C85CEDB002D72B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5C4B556A2C85CEDB002D72B8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		5C4B55642C85CEDB002D72B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5C4B55632C85CEDB002D72B8 /* Memorabilia.app */,
+				5C4B55632C85CEDB002D72B8 /* Memento.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,9 +87,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5C4B55622C85CEDB002D72B8 /* Memorabilia */ = {
+		5C4B55622C85CEDB002D72B8 /* Memento */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5C4B55772C85CEDD002D72B8 /* Build configuration list for PBXNativeTarget "Memorabilia" */;
+			buildConfigurationList = 5C4B55772C85CEDD002D72B8 /* Build configuration list for PBXNativeTarget "Memento" */;
 			buildPhases = (
 				5C4B555F2C85CEDB002D72B8 /* Sources */,
 				5C4B55602C85CEDB002D72B8 /* Frameworks */,
@@ -99,12 +99,12 @@
 			);
 			dependencies = (
 			);
-			name = Memorabilia;
+			name = Memento;
 			packageProductDependencies = (
 				5C4B557B2C8D8A1A002D72B8 /* Web3Auth */,
 			);
 			productName = Memorabilia;
-			productReference = 5C4B55632C85CEDB002D72B8 /* Memorabilia.app */;
+			productReference = 5C4B55632C85CEDB002D72B8 /* Memento.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +138,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5C4B55622C85CEDB002D72B8 /* Memorabilia */,
+				5C4B55622C85CEDB002D72B8 /* Memento */,
 			);
 		};
 /* End PBXProject section */
@@ -323,6 +323,7 @@
 				DEVELOPMENT_TEAM = TS4RX6E9KD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Memorabilia/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Memento;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -351,6 +352,7 @@
 				DEVELOPMENT_TEAM = TS4RX6E9KD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Memorabilia/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Memento;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -381,7 +383,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5C4B55772C85CEDD002D72B8 /* Build configuration list for PBXNativeTarget "Memorabilia" */ = {
+		5C4B55772C85CEDD002D72B8 /* Build configuration list for PBXNativeTarget "Memento" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5C4B55782C85CEDD002D72B8 /* Debug */,
