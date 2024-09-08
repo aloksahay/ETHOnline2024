@@ -12,11 +12,44 @@ class ViewController: UIViewController {
 
     var user: Web3AuthState?
     
+    @IBOutlet var bgImageView: UIImageView!
+    var signinButton: UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func setupViews() {
+        signinButton = UIButton(type: .system)
+        signinButton?.setTitle("Sign in with Web3Auth", for: .normal)
+        signinButton?.setTitleColor(.white, for: .normal)
+        signinButton?.backgroundColor = .black
+        signinButton?.layer.borderColor = UIColor.white.cgColor
+        signinButton?.layer.borderWidth = 1.0
+        signinButton?.layer.cornerRadius = 20
+        signinButton?.clipsToBounds = true
+        signinButton?.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(signinButton!)
+        
+        NSLayoutConstraint.activate([
+            signinButton!.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            signinButton!.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 270),
+            signinButton!.widthAnchor.constraint(equalToConstant: 200),
+            signinButton!.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        
+        
     }
 
+    @IBAction func signInPressed(_ sender: Any) {
+        loginUser()
+    }
     func loginUser() {
         login(provider: .GOOGLE)
     }
