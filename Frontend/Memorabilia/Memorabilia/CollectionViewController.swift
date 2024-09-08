@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CollectionViewController: UIViewController {
+class CollectionViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
     @IBOutlet weak var mintedViewController: UIView!
     
@@ -18,12 +18,26 @@ class CollectionViewController: UIViewController {
         mintedViewController.alpha = 0.0
     }
     
-    func mintMemento() {        
-        print("mint tshirt")
-        let productVC = ProductViewController()
+    func mintMemento() {
+        
+        guard let productVC = storyboard?.instantiateViewController(withIdentifier: "ProductVC") as? ProductViewController else {
+            print("error loading product VC")
+            return
+        }
+        
+        print("mint memento")
+        
         productVC.product = .tshirt
         productVC.isMintable = true
         productVC.modalPresentationStyle = .popover
+        
+        if let popoverPresentationController = productVC.popoverPresentationController {
+            popoverPresentationController.delegate = self
+        }
         present(productVC, animated: true, completion: nil)
+    }
+    
+    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        print("show minted item")
     }
 }

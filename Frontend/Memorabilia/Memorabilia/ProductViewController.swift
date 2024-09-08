@@ -47,4 +47,18 @@ class ProductViewController: UIViewController {
         }
     }
     
+    @IBAction func mintPressed(_ sender: Any) {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.mintButton.setTitle("Mint complete!", for: .normal)
+            
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self?.dismiss(animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
 }
