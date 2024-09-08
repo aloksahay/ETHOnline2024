@@ -13,4 +13,9 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func mintMemento() {        
+        print("mint memento")
+        
+    }
 }

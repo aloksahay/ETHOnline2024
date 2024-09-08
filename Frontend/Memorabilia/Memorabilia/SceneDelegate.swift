@@ -11,7 +11,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        
+        if let url = URLContexts.first?.url {
+            // Handle URL
+            print("Opened app from URL: \(url)")            
+            guard let _ = (scene as? UIWindowScene) else { return }
+            
+            if let navController = window?.rootViewController as? UINavigationController, let rootViewController = navController.topViewController as? CustomTabbarController {
+                
+                guard let collVC = rootViewController.viewControllers?[1] as? CollectionViewController else {
+                    print("Didnt find VC")
+                    return
+                }
+                collVC.mintMemento()
+            } else {
+                print("Didnt find root")
+            }
+        }
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
